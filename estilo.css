@@ -1,0 +1,93 @@
+body {
+  background: linear-gradient(-45deg, #6a11cb, #2575fc, #00c9a7, #6a11cb);
+  background-size: 400% 400%;
+  animation: moverDegradado 12s ease-in-out infinite;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  font-family: sans-serif;
+}
+
+@keyframes moverDegradado {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.content {
+  position: relative;
+  background: rgba(20, 20, 30, 0.85);
+  padding: 3vw;
+  border-radius: 1vw;
+  text-align: center;
+  width: 80vw;
+  max-width: 500px;
+  color: white;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.content::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(-45deg, #ff6f61, #ffb347, #ffd166, #ff6f61);
+  background-size: 400% 400%;
+  animation: moverDegradado 12s ease-in-out infinite;
+  border-radius: inherit;
+  z-index: -1;
+}
+
+audio {
+  width: 100%;
+  margin-top: 2vh;
+}
+
+#fileInput {
+  width: 100%;
+  margin-top: 2vh;
+  display: block;
+}
+
+.controls button {
+  background-color: #1b263b;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 2vw;
+  cursor: pointer;
+  margin: 0.7vw;
+  border-radius: 5px;
+}
+
+.controls button:hover {
+  background-color: #0d6efd;
+  color: white;
+}
+
+#playlist {
+  list-style: none;
+  padding: 0;
+  margin-top: 2vh;
+  overflow-y: auto;
+  text-align: left;
+}
+
+#playlist li {
+  background-color: #f0f0f0;
+  padding: 1vh 2vh;
+  margin-bottom: 1vh;
+  border-radius: 0.5vh;
+  cursor: pointer;
+  color: #222;
+}
+
+#playlist li.active {
+  background-color: #0d6efd;
+  color: white;
+}
